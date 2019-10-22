@@ -405,6 +405,6 @@ namespace AffineWinFormCpp {
 		Image^ Affine(CAffineInfo* _affineInfo);
 		void OnKeyPressTextBoxSx(Object^ sender, KeyPressEventArgs^ e);
 		void OnKeyPressTextBoxSy(Object^ sender, KeyPressEventArgs^ e);
-		int CountChar(String^ _strOld, String^ _strNew);
+		int CountChar(String^ _str, String^ _strChar);
 	};
 }

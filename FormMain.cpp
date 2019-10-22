@@ -181,7 +181,7 @@ void FormMain::OnKeyPressTextBoxSy(Object^ sender, KeyPressEventArgs^ e)
 	return;
 }
 
-int FormMain::CountChar(String^ _strOld, String^ _strNew)
+int FormMain::CountChar(String^ _str, String^ _strChar)
 {
-	return _strOld->Length - _strOld->Replace(_strNew, "")->Length;
+	return _str->Length - _str->Replace(_strChar, "")->Length;
 }
