@@ -291,7 +291,7 @@ namespace AffineWinFormCpp {
 			this->btnInit->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->btnInit->Name = L"btnInit";
 			this->btnInit->Size = System::Drawing::Size(150, 50);
-			this->btnInit->TabIndex = 3;
+			this->btnInit->TabIndex = 2;
 			this->btnInit->Text = L"Init";
 			this->btnInit->UseVisualStyleBackColor = true;
 			this->btnInit->Click += gcnew System::EventHandler(this, &FormMain::OnClickBtnInit);
@@ -303,7 +303,7 @@ namespace AffineWinFormCpp {
 			this->btnClose->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->btnClose->Name = L"btnClose";
 			this->btnClose->Size = System::Drawing::Size(150, 50);
-			this->btnClose->TabIndex = 4;
+			this->btnClose->TabIndex = 3;
 			this->btnClose->Text = L"Close";
 			this->btnClose->UseVisualStyleBackColor = true;
 			this->btnClose->Click += gcnew System::EventHandler(this, &FormMain::OnClickBtnClose);
@@ -315,7 +315,7 @@ namespace AffineWinFormCpp {
 			this->btnFileSelect->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->btnFileSelect->Name = L"btnFileSelect";
 			this->btnFileSelect->Size = System::Drawing::Size(150, 50);
-			this->btnFileSelect->TabIndex = 2;
+			this->btnFileSelect->TabIndex = 1;
 			this->btnFileSelect->Text = L"File Select...";
 			this->btnFileSelect->UseVisualStyleBackColor = true;
 			this->btnFileSelect->Click += gcnew System::EventHandler(this, &FormMain::OnClickBtnFileSelect);
