@@ -2,7 +2,7 @@
 
 using namespace AffineWinFormCpp;
 
-void FormMain::OnMouseDownFormMain(Object^ sender, MouseEventArgs^ e)
+void FormMain::OnMouseDownLblTitle(Object^ sender, MouseEventArgs^ e)
 {
 	if ((e->Button & ::MouseButtons::Left) == ::MouseButtons::Left)
 	{
@@ -12,7 +12,7 @@ void FormMain::OnMouseDownFormMain(Object^ sender, MouseEventArgs^ e)
 	}
 }
 
-void FormMain::OnMouseMoveFormMain(Object^ sender, MouseEventArgs^ e)
+void FormMain::OnMouseMoveLblTitle(Object^ sender, MouseEventArgs^ e)
 {
 	if ((e->Button & ::MouseButtons::Left) == ::MouseButtons::Left)
 	{

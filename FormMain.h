@@ -24,8 +24,8 @@ namespace AffineWinFormCpp {
 			//
 			//TODO: ここにコンストラクター コードを追加します
 			//
-			lblTitle->MouseDown += gcnew MouseEventHandler(this, &FormMain::OnMouseDownFormMain);
-			lblTitle->MouseMove += gcnew MouseEventHandler(this, &FormMain::OnMouseMoveFormMain);
+			lblTitle->MouseDown += gcnew MouseEventHandler(this, &FormMain::OnMouseDownLblTitle);
+			lblTitle->MouseMove += gcnew MouseEventHandler(this, &FormMain::OnMouseMoveLblTitle);
 		}
 
 	protected:
@@ -395,8 +395,8 @@ namespace AffineWinFormCpp {
 		Point^	m_mousePoint;
 		String^	m_strOpenFileName;
 	public:
-		void OnMouseDownFormMain(Object^ sender, MouseEventArgs^ e);
-		void OnMouseMoveFormMain(Object^ sender, MouseEventArgs^ e);
+		void OnMouseDownLblTitle(Object^ sender, MouseEventArgs^ e);
+		void OnMouseMoveLblTitle(Object^ sender, MouseEventArgs^ e);
 		void OnClickBtnFileSelect(Object^ sender, EventArgs^ e);
 		void OnClickBtnClose(Object^ sender, EventArgs^ e);
 		void OnClickBtnInit(Object^ sender, EventArgs^ e);
