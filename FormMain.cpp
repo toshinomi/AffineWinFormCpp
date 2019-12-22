@@ -2,6 +2,11 @@
 
 using namespace AffineWinFormCpp;
 
+/// <summary>
+/// タイトルバーマウスダウンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnMouseDownLblTitle(Object^ sender, MouseEventArgs^ e)
 {
 	if ((e->Button & ::MouseButtons::Left) == ::MouseButtons::Left)
@@ -12,6 +17,11 @@ void FormMain::OnMouseDownLblTitle(Object^ sender, MouseEventArgs^ e)
 	}
 }
 
+/// <summary>
+/// タイトルバーマウスムーブのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnMouseMoveLblTitle(Object^ sender, MouseEventArgs^ e)
 {
 	if ((e->Button & ::MouseButtons::Left) == ::MouseButtons::Left)
@@ -21,6 +31,11 @@ void FormMain::OnMouseMoveLblTitle(Object^ sender, MouseEventArgs^ e)
 	}
 }
 
+/// <summary>
+/// ファイル選択ボタンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnClickBtnFileSelect(Object^ sender, EventArgs^ e)
 {
 	ComOpenFileDialog^ openFileDlg = gcnew ComOpenFileDialog();
@@ -37,6 +52,11 @@ void FormMain::OnClickBtnFileSelect(Object^ sender, EventArgs^ e)
 	return;
 }
 
+/// <summary>
+/// 閉じるボタンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnClickBtnClose(Object^ sender, EventArgs^ e)
 {
 	::DialogResult result = ::MessageBox::Show("Close the application ?", "Question", MessageBoxButtons::OKCancel, MessageBoxIcon::Exclamation, MessageBoxDefaultButton::Button2);
@@ -46,6 +66,11 @@ void FormMain::OnClickBtnClose(Object^ sender, EventArgs^ e)
 	}
 }
 
+/// <summary>
+/// 初期化ボタンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnClickBtnInit(Object^ sender, EventArgs^ e)
 {
 	if (!String::IsNullOrWhiteSpace(m_strOpenFileName))
@@ -54,6 +79,11 @@ void FormMain::OnClickBtnInit(Object^ sender, EventArgs^ e)
 	}
 }
 
+/// <summary>
+/// アフィン変換実行ボタンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">イベントのデータ</param>
 void FormMain::OnClickBtnGo(Object^ sender, EventArgs^ e)
 {
 	if (String::IsNullOrWhiteSpace(m_strOpenFileName))
@@ -94,6 +124,11 @@ void FormMain::OnClickBtnGo(Object^ sender, EventArgs^ e)
 	delete image;
 }
 
+/// <summary>
+/// 文字列の空のチェック
+/// </summary>
+/// <param name="_str">画像処理の名称</param>
+/// <returns>文字列の空のチェックの結果 文字列なし/文字列あり</returns>
 bool FormMain::IsEmpty(String^ _str)
 {
 	bool bIsEmpty = false;
@@ -105,6 +140,11 @@ bool FormMain::IsEmpty(String^ _str)
 	return bIsEmpty;
 }
 
+/// <summary>
+/// アフィン変換
+/// </summary>
+/// <param name="_affineInfo">アフィン変換情報</param>
+/// <returns>アフィン変換のイメージ</returns>
 Image^ FormMain::Affine(CAffineInfo* _affineInfo)
 {
 	CTranslate* pTranslate = _affineInfo->GetTranslate();
@@ -133,6 +173,11 @@ Image^ FormMain::Affine(CAffineInfo* _affineInfo)
 	return bitmap;
 }
 
+/// <summary>
+/// スケールXのテキストボックスのキー入力イベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">キー入力イベントのデータ</param>
 void FormMain::OnKeyPressTextBoxSx(Object^ sender, KeyPressEventArgs^ e)
 {
 	if (e->KeyChar == '.')
@@ -157,6 +202,11 @@ void FormMain::OnKeyPressTextBoxSx(Object^ sender, KeyPressEventArgs^ e)
 	return;
 }
 
+/// <summary>
+/// スケールYのテキストボックスのキー入力イベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">キー入力イベントのデータ</param>
 void FormMain::OnKeyPressTextBoxSy(Object^ sender, KeyPressEventArgs^ e)
 {
 	if (e->KeyChar == '.')
@@ -181,6 +231,12 @@ void FormMain::OnKeyPressTextBoxSy(Object^ sender, KeyPressEventArgs^ e)
 	return;
 }
 
+/// <summary>
+/// 文字列から指定の文字をカウントする
+/// </summary>
+/// <param name="_str">文字列</param>
+/// <param name="_strChar">カウントする文字</param>
+/// <returns>カウント数</returns>
 int FormMain::CountChar(String^ _str, String^ _strChar)
 {
 	return _str->Length - _str->Replace(_strChar, "")->Length;
